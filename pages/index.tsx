@@ -15,8 +15,10 @@ function Index() {
       <p>
         <Link href={"/posts"}>Posts</Link>
       </p>
+      <p>
+        <Link href={"/weather"}>Weather</Link>
+      </p>
 
-      
     </MainLayout>
   );
 }

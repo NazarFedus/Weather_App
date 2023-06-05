@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { FC } from "react";
+import NextHead from "next/head";
 
-const WeatherView = () => {
+const WeatherView: FC<any> = ({ weather }) => {
+  console.log(weather);
+
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <>
+      <NextHead>
+        <title> Weather Page </title>
+        <meta name="description" content="This is Weather Forecast" />
+      </NextHead>
+    </>
+  );
+};
 
-export default WeatherView
+export default WeatherView;
