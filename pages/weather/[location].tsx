@@ -1,10 +1,8 @@
 import React, { FC } from "react";
-import WeatherView from '../../components/views/WeatherView'
+import WeatherView from "../../components/views/WeatherView";
 import axios from "axios";
+import { IParams, WeatherProps } from "../../types";
 
-interface WeatherProps {
-  weather: any;
-}
 
 const Weather: FC<WeatherProps> = ({ weather }) => (
   <WeatherView weather={weather} />
@@ -12,7 +10,7 @@ const Weather: FC<WeatherProps> = ({ weather }) => (
 
 export default Weather;
 
-export const getServerSideProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }: { params: IParams }) => {
   const location = params.location || "LVIV";
   const apiURL = `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=5d066958a60d315387d9492393935c19`;
 
